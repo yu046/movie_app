@@ -1,0 +1,13 @@
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<h1>ようこそ</h1>
+<p>トップページです。</p>
+    <% if current_user.present? %>
+        <li><%= current_user.email %>さん</li>
+        <li><%= link_to 'アカウント編集', edit_user_registration_path %></li>
+        <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+        <li><%= link_to 'アカウント登録', new_user_registration_path %></li>
+        <li><%= link_to 'ログイン', new_user_session_path %></li>
+    <% end %>
+<p><%= link_to("メール確認", "/letter_opener")%></p>

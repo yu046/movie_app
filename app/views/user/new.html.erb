@@ -1,0 +1,42 @@
+<div class="new-container">
+    <div class="site-info">
+        <div class="title">
+        Weekendへようこそ！
+        </div>
+        <strong>Weekend</strong>は週間ごとにランダムでオススメの<strong>映画×音楽</strong>を紹介するサイトです。<br>
+        気になった作品があれば見てみよう！<br>
+        また、紹介したい作品があれば追加してみよう！<br>
+    </div>
+    <div class="new-info">
+        <div class="form-error">
+            <% @user.errors.full_messages.each do |message| %>
+            <%= message %>
+            <% end %>
+        </div>
+        <div class="title">
+        新規登録
+        </div>
+        <div class="new-user">
+            <%= form_tag("/user/create", {multipart: true}) do%>
+            <div class="info">
+                <div class="info-item">
+                ユーザー名(この名前で表示されます)<input type="text" name="name"value="<%= @user.name%>", placeholder="piece.workさん">
+                </div>
+                <div class="info-item">
+                email<input type="email" name="email" value="<%= @user.email%>", placeholder="email@example.com">
+                </div>
+                <div class="info-item">
+                パスワード<input type="password" name="password" value="<%= @user.password%>">
+                </div>
+                <div class="info-item">
+                アイコン画像<input type="file" name="image" value="<%= @user.image_name%>">
+                </div>
+                <div class="info-item">
+                <input type="submit" value="新規登録">
+                </div>
+            </div>
+            <% end %>
+            <%= link_to("ログインはこちら", "/login")%><br><br>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container-movie">
+    <%= render 'shared/menubar' %>
+    <div class="conte-info">
+        <div class="index-link">
+        <%= render "shared/toolbar" %>
+        </div>
+        <div class="new">
+            <div class="title">
+            作品を追加しよう
+            </div>
+            <%= form_tag("/post/create",{multipart: true}) do %>
+            <div class="new-item">
+                作品名
+                <input type="text" name="title">
+            </div>
+            <div class="new-item">
+                公開日
+                <input type="date" name="release">
+            </div>
+            <div class="new-item">
+                上映時間
+                <input type="inreger" name="running_time">
+            </div>
+            <div class="new-item">
+                あらすじ
+                <input type="text" name="synopsis">
+            </div>
+            <div class="new-item">
+                イメージ
+                <input type="file" name="image">
+            </div>
+            <div class="new-item">
+                製作国
+                <input type="text" name="contry">
+            </div>
+            <div class="new-item">
+                <input type="submit" value="追加">
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>

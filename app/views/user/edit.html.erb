@@ -1,0 +1,55 @@
+<%= render 'shared/menubar' %>
+<div class="container-user">
+    <div class="index-link">
+    <%= render partial: "shared/toolbar",  locals: {music: @music}  %>
+    </div>
+    <div class="user-info">
+        <%= form_tag("/user/update/#{@user.id}",{multipart: true}) do %>
+            <div class="link">
+            <%= link_to("topに戻る", "/") %>
+            </div>
+            <div class="profile">
+                <div class="head">
+                </div>
+                <div class="user">
+                    <div class="image">
+                    <input type="file" name="iamge" value="<%= @user.image_name%>"> 
+                    </div>
+                    <div class="info">
+                        <div class="name">
+                        <input type="text" name="name" value="<%= @user.name %>">
+                        </div>
+                        <div class="email">
+                        <input type="email" name="email" value="<%= @user.email%>">
+                        </div>
+                        <div class="password">
+                        <input type="password" name="password" value="<%= @user.password%>">
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="submit">
+            <input type="submit" value="変更">
+            </div>
+        <% end %>
+        <div class="submit">
+        <%= link_to("削除", "/user/destroy/#{@user.id}", {method: "post"})%>
+        </div>
+
+        <div class="my-movie">
+            <% @user.movie.each do |movie|%>
+                <div class="movie">
+                    <img src="/movie_image/<%= movie.image %>">
+                    <div class="info">
+                    <%= movie.title %>
+                    <%= movie.running_time %>
+                    <%= movie.synopsis %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <div>
+    <%= link_to("topに戻る", "/user/index") %>
+    </div>
+</div>

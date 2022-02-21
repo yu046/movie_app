@@ -1,0 +1,151 @@
+// Place all the styles related to the post controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@media screen and(min-width: 1016px){
+    .container-movie{
+        //padding-top: 15px;
+        
+        .conte-info{
+            display: flex;
+            .index-link{
+                margin-top: 15px;
+                width: 160px;
+                padding-bottom: 10px;
+            }
+            .movie-list{
+                padding-top: 40px;
+                width: 87%;
+                margin-left: 85px;
+
+                .movie{
+                    display: flex;
+
+                    .image {
+                        img {
+                        width: 150px;
+                        height: 200px;
+                        border-radius: 0%;
+                        } 
+                    }
+
+                    .info{
+                        .title{
+                            font-weight: bold;
+                            font-size:17px;
+                        }
+                        .releases{
+                            //font-size:13px;
+                        }
+                        .run-time{
+                            //font-size:13px;
+                        }
+
+                        .syn{
+                            //font-size:13px;
+                        }
+                    }
+                }
+            }
+        }
+
+        //新規追加(new)
+        .new{
+            width: 63%;
+            padding-top: 60px;
+            padding-left: 500px;
+
+            img {
+                width: 150px;
+                height: 200px;
+                border-radius: 0%;
+                } 
+                
+            .title{
+                font-size: 25px;
+                font-weight: bold;
+            }
+        }
+        //編集(edit)
+        .movie-edit{
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+            text-align: center;
+
+            .movie-list{
+
+                .movie-info{
+                    width: 100%;
+                    display: flex;
+
+                    img{
+                        width: 150px;
+                        height: 200px;
+                        border-radius: 0%;
+                    }
+
+                    .info{
+                        text-align: left;
+                        display: inline-block;
+                        margin-left: 6px;
+
+                        input[type="text"] {
+                            width: 100%;
+                            height: 40px;
+                            border: 1px solid #bdbdbd;
+                            border-radius: 3px;
+                        }
+    
+                        input[type="datetime-local"] {
+                            width: 100%;
+                            height: 40px;
+                            border: 1px solid #bdbdbd;
+                            border-radius: 3px;
+                        }
+
+                        input[type="number"] {
+                            width: 100%;
+                            height: 40px;
+                            border: 1px solid #bdbdbd;
+                            border-radius: 3px;
+                        }
+    
+                        textarea {
+                            width: 100%;
+                            height: 40px;
+                            border: 1px solid #bdbdbd;
+                            border-radius: 3px;
+                        }
+
+                        input[type="submit"] {
+                            width: 100%;
+                            height: 45px;
+                            border: 1px solid #bdbdbd;
+                            border-radius: 3px;
+                            background-color: #f4f4f4;
+                        }
+
+                        button {
+                            width: 100%;
+                            height: 45px;
+                            border: 1px solid #bdbdbd;
+                            border-radius: 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}  
+//タブレット
+@media screen and (min-width: 480px) and (max-width: 768px){
+    body{
+    }
+    
+}
+//スマホ
+@media screen and(max-width: 480px){
+    body{
+    }
+    
+}

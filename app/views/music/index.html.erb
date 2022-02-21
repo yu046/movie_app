@@ -1,0 +1,29 @@
+<div class="container-movie">
+    <%= render 'shared/menubar' %>
+    <div class="conte-info">
+        <div class="index-link">
+        <%= render "shared/toolbar"%>
+        </div>
+        <div class="movie-list"> 
+        <h1>作品一覧</h1>
+        <% @music.each do |post|%>
+            <%= link_to("/music/#{post.id}") do %>
+                <div class="movie">
+                    <div class="image">
+                        <img src="/music_image/<%= post.image %>">
+                    </div>
+                    <div class="info">
+                        <div class="title">
+                            <%= post.title %>
+                            /<%= post.artist %>
+                        </div>
+                        <div class="run-time">
+                            公開日:<%= post.release.strftime('%Y') %>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container-movie">
+    <%= render 'shared/menubar' %>
+    <div class="conte-info">
+        <div class="index-link">
+        <%= render partial: "shared/toolbar",  locals: {music: @music}  %>
+        </div>
+        <div class="new">
+            <%= form_tag("/music/create",{multipart: true}) do %>
+                <div class="new-item">
+                    アーティスト名
+                    <input type="text" name="artist">
+                </div>
+                <div class="new-item">
+                    作品名
+                    <input type="text" name="title">
+                </div>
+                <div class="new-item">
+                    公開日
+                    <input type="date" name="release">
+                </div>
+                <div class="new-item">
+                    演奏時間
+                    <input type="inreger" name="running_time">
+                </div>
+                <div class="new-item">
+                    ジャケ写orサムネ
+                    <input type="file" name="image">
+                </div>
+                <div class="new-item">
+                    <input type="submit" value="追加">
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

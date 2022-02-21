@@ -1,0 +1,38 @@
+<div class="container-movie">
+    <%= render 'shared/menubar' %>
+    <div class="conte-info">
+        <div class="index-link">
+        <%= render partial: "shared/toolbar",  locals: {music: @music}  %>
+        </div>
+        <div class="new">     
+            <div class="title">
+            作品を編集中
+            </div>
+            <%= form_tag("/music/update/#{@post.id}", {multipart: true}) do %>
+                <img src="<%="/music_image/#{@post.image}"%>">
+                <div class="title">
+                    <input name="title" value="<%= @post.title %>">
+                </div>
+                <div class="release">
+                    <input name="release" type="date" value="<%= @post.release %>">
+                </div>
+                <div class="run-time">
+                    <input name="running_time" value="<%= @post.running_time %>">
+                </div>
+                <div class="syn">
+                    <input name="artist" value="<%= @post.artist %>">
+                </div>
+                <div class="image">
+                    <input name="image" type="file">
+                </div>
+                <div class="submit">
+                    <input type="submit" value="編集">
+                </div>
+                <div class="submit">
+                <%= link_to("削除","/music/destroy/#{@post.id}", {method: "post"})%>
+                </div>
+            <% end %>
+        </div>
+        <%= link_to("戻る", "/music") %>
+    </div>
+</div>

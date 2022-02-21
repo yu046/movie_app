@@ -1,0 +1,33 @@
+<%= render 'shared/menubar' %>
+<div class="container-user">
+    <div class="index-link">
+    <%= render partial: "shared/toolbar",  locals: {music: @music}  %>
+    </div>
+    <div class="user-info">
+        <div class="link">
+        <%= link_to("topに戻る", "/") %>
+        </div>
+        <div class="profile">
+            <div class="head">
+            </div>
+            <div class="user">
+                <div class="image">
+                <img src="/user_image/<%= @current_user.image_name %>">
+                </div>
+                <div class="info">
+                    <div class="name">
+                    <%= @current_user.name %>
+                    </div>
+                    <div class="email">
+                    email:<%= @current_user.email%>
+                    </div>
+                </div>
+            </div>
+            <div class="edit">
+            <%= link_to("/user/#{@current_user.id}") do %>
+            プロフィールを変更
+            <% end %>
+            </div>
+        </div>    
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<%
+=begin%>
+ <% content_for :title do %>
+    「<%= @search_title %>」の検索結果は<%= @search_movie_articles.count %>件です
+<% end %>
+<div class="container-search">
+    <%= render 'shared/menubar' %>
+
+    <div class="search-result">
+    「<%= @movie_search.title %>」の検索結果は<%= @search_movie_articles.count %>件です
+
+        <div class="search-info">
+            <% @search_movie_articles.each do |result|%>
+            <div class="result">
+                <div class="image">
+                <img src="/movie_image/<%= result.image %>">
+                </div>
+                <div class="right-info">
+                    <div class="title">
+                    <%= result.title %>
+                    </div>
+                    <%= result.release.strftime('%Y/%m/%d') %>/
+                    <%= result.running_time %>分<br>
+                    <%= result.synopsis %>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+    <%= link_to("topに戻る", "/") %>
+</div> 
+<%
+=end%>

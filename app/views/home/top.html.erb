@@ -1,0 +1,212 @@
+<div class="container">
+
+    <%= render 'shared/menubar' %>
+    <div class="container-body">
+        <%= render partial: "shared/toolbar"%>
+        <%
+=begin%>
+ <%= render partial: "shared/toolbar",  locals: {post: @post}  %> 
+<%
+=end%>
+
+        <div class="info-top">
+            <div class="left-container">
+                <div class="piecework">
+                    <div class="title">
+                    今週の注目作品はこちら
+                    </div>
+                    <div class="Main">
+                        <%
+=begin%>
+ <div class="movie">
+                            <img src="/movie_image/<%= @movie.image %>">
+                            <div class="stitle">
+                            <%= @movie.title%>
+                            </div>
+                            <%= @movie.contry%>/
+                            <%= @movie.release.strftime('%Y')%>
+                        </div>
+                        <div class="cross">
+                            <img src="cross.jpg">
+                        </div>
+                        <div class="music">
+                            <img src="/music_image/<%= @music.image %>">
+                            <div class="stitle">
+                            <%= @music.artist%>/
+                            <%= @music.title%>
+                            </div>
+                            <%= @music.release.strftime('%Y')%>
+                        </div> 
+<%
+=end%>
+                    </div>
+                </div>
+                
+                <div class="topic">
+                    <div class="title">
+                    今注目の話題
+                    </div>
+                    <div class="H1">
+                        <div class="h1">
+                            <img src="ado.jpg">
+                            <div class="article">
+                            <%= "Ado、「レコ大」特別賞受賞を記念して「うっせぇわ」スペシャルMV制作 Adoが「第63回 輝く！日本レコード大賞」の特別賞を受賞したことを記念して、「うっせぇわ」のスペシャルミュージクビデオが制作される。MVの制作に当たって、本日11月20日より全国の絵師やファンから「うっせぇわ」のMVに登場するキ…ャラクター・うっせぇわちゃんのイラストを募集する企画を実施中。…".truncate(99) %>
+                            </div>
+                        </div>
+                        <div class="h1-2">
+                            <img src="640.jpg">
+                            <div class="article">
+                            <%= truncate("ホークアイ、「ハンガー・ゲーム」のカットニスに完敗？　キャラクタービジュアル＆本編映像公開", length:50) %>
+                            </div>
+                            <div class="p">
+                            <%= truncate("マーベルドラマ「ホークアイ」のキャラクタービジュアルと本編映像（https://youtu.be/-OuiTTzAMtA）が、このほど公開された。キャラクタービジュアルには、弓を背中に携え、紫の新コスチュームに身を包んだホークアイとケイト・ビショップ、さらに“ピザドッグ”の愛称で原作コミックファンに親しまれている犬のラッキーの姿が収められている。…", length:33) %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="H2">
+                        <div class="h2">
+                            <img src="red.jpg">
+                            <div class="article">
+                                <%= truncate("「ONE PIECE FILM RED」22年8月公開！　監督は「コードギアス」の谷口悟朗、物語のカギは歌声＆赤髪", length:70) %>
+                            </div>
+                        </div>
+                        <div class="h3">
+                            <img src="de.jpg">
+                            <div class="article">
+                                <%= truncate("ディズニー最新作に登場する今までとは違った“魔法”とは？　「ミラベルと魔法だらけの家」監督が語る", length:70) %>
+                            </div>
+                        </div>
+                        <div class="h3">
+                            <img src="6401.jpg">
+                            <div class="article">
+                                <%= truncate("「トイ・ストーリー」バズ・ライトイヤー誕生の秘密を描く新作映画、22年7月公開　壮大なスケールの特報も完成", length:70) %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <% pre = "準備中" %>
+                <div class="title">
+                    映画一覧
+                </div>
+                <div class="work-list">
+                <%
+=begin%>
+ <% @post.each do |post|%>
+                    <div class="work">
+                        <div class="image">
+                            <img src="/movie_image/<%= post.image %>">
+                        </div>
+                        <div class="right-info">
+                            <div class="title"> 
+                                <%= post.title %>
+                            </div>
+                        </div>
+                    </div>
+                <% end %> 
+<%
+=end%>
+                </div>
+            </div>
+
+
+            <div class="right-container">
+                <div class="PR">
+                PR広告
+                </div>
+                <div class="PR">
+                PR広告
+                </div>
+                <div class="sub-title">
+                週間 "映画" ランキング
+                </div>
+                <div class="ranking">
+                    <div class="rank-info">
+                        <div class="rank1">
+                        1
+                        </div>
+                        <div class="image">
+                            <%#<img src="/movie_image/<%= @movie_rank[0].image %>">
+                        </div>
+                        <div class="info">
+                            <div class="title"> 
+                                <%#<%= @movie_rank[0].title %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-info">
+                        <div class="rank2">
+                        2
+                        </div>
+                        <div class="image">
+                            <%#<img src="/movie_image/<%= @movie_rank[1].image %>">
+                        </div>
+                        <div class="info">
+                            <div class="title"> 
+                                <%#<%= @movie_rank[1].title %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-info">
+                        <div class="rank3">
+                        3
+                        </div>
+                        <div class="image">
+                            <%#<img src="/movie_image/<%= @movie_rank[2].image %>">
+                        </div>
+                        <div class="info">
+                            <div class="title"> 
+                                <%#<%= @movie_rank[2].title %>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+                <div class="sub-title">
+                週間 "音楽" ランキング
+                </div>
+                <div class="ranking">
+                    <div class="rank-info">
+                        <div class="rank1">
+                        1
+                        </div>
+                        <div class="image">
+                            <%#<img src="/music_image/<%= @music_rank[0].image %>">
+                        </div>
+                        <div class="info">
+                            <div class="title"> 
+                                <%#<%= @music_rank[0].title %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-info">
+                        <div class="rank2">
+                        2
+                        </div>
+                        <div class="image">
+                            <%#<img src="/music_image/<%= @music_rank[1].image %>">
+                        </div>
+                        <div class="info">
+                            <div class="title"> 
+                                <%#<%= @music_rank[1].title %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-info">
+                        <div class="rank3">
+                        3
+                        </div>
+                        <div class="image">
+                            <%#<img src="/music_image/<%= @music_rank[2].image %>">
+                        </div>
+                        <div class="info">
+                            <div class="title"> 
+                                <%#<%= @music_rank[2].title %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

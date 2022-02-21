@@ -1,0 +1,59 @@
+<div class="nav">
+    <div class="toolbar">
+        <div class="toolbar-home">
+        <%= link_to("/") do %>
+        <i class="fas fa-home icon"></i> ホーム
+        <% end %>
+        </div>
+        <% if @current_user %>
+        <div class="toolbar-home">
+        <%= link_to("/user/index") do %>
+        <i class="far fa-user icon"></i> プロフィール
+        <% end %>
+        </div>
+        <div class="toolbar-home">
+        <%= link_to("/logout", {method: "post"}) do %>
+        <i class="fas fa-sign-out-alt icon"></i> ログアウト
+        <% end %>
+        </div>
+        <% else %>
+        <div class="toolbar-home">
+        <%= link_to("/signup") do %>
+        <i class="fas fa-bookmark icon"></i> 新規登録
+        <% end %>
+        </div>
+        <div class="toolbar-home">
+        <%= link_to("/login") do %>
+        <i class="fas fa-walking icon"></i> ログイン
+        <% end %>
+        </div>
+        <% end %>
+        <div class="toolbar-item">
+        <%= link_to("/post") do %>
+        <i class="fas fa-film icon"></i> 映像一覧
+        <% end %>
+        </div>
+        <div class="toolbar-item">
+        <%= link_to("/music") do %>
+        <i class="fas fa-headphones-alt icon"></i> 音楽一覧
+        <% end %>
+        </div>
+        <div class="toolbar-item">
+        <%= link_to("/pages/index") do %>
+        デバイスのトップページ
+        <% end %>
+        </div>
+            <% if current_page?("/post")%>
+                <div class="toolbar-item">
+                <%= link_to("作品を追加する", "/post/new") %>
+                </div>
+            <% end %>
+            <!-- 編集画面用のツールバー、music用のも追加する (urlに:idを持ってるやつ)  -->
+
+            <% if current_page?("/music")%>
+                <div class="toolbar-item">
+                <%= link_to("作品を追加する", "/post/new") %>
+                </div>
+            <% end %>
+    </div>
+</div>

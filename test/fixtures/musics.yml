@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  release: 2021-12-06 08:17:52
+  running_time: 1
+  image: MyText
+  artist: MyText
+  user_id: 1
+
+two:
+  title: MyText
+  release: 2021-12-06 08:17:52
+  running_time: 1
+  image: MyText
+  artist: MyText
+  user_id: 1

@@ -1,0 +1,63 @@
+<div class="new-container">
+  <div class="site-info">
+        <div class="title">
+        Weekendへようこそ！
+        </div>
+        <strong>Weekend</strong>は週間ごとにランダムでオススメの<strong>映画×音楽</strong>を紹介するサイトです。<br>
+        気になった作品があれば見てみよう！<br>
+        また、紹介したい作品があれば追加してみよう！<br>
+    </div>
+  <div class="new-info">
+    <div class="title"><%= t('.sign_up') %></div>
+
+    <div class="new-user">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        
+        <div class="info">
+          <div class="info-item">
+            <%= f.label :username %><br />
+            <%= f.text_field :username %>
+          </div>
+          
+          <div class="info-item">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+
+          <div class="info-item">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password" %>
+          </div>
+
+          <div class="info-item">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          </div>
+
+          <div class="submit">
+            <%= f.submit t('.sign_up') %>
+          </div>
+
+          <div class="sing-in">
+            <%- if controller_name != 'sessions' %>
+              <div class="Border">
+                <div class="border"></div><div class="text">アカウントをお持ちですか？</div><div class="border"></div><br>
+              </div>
+              <%= link_to t(".ログイン"), new_session_path(resource_name) %><br />
+            <% end %>
+            <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+              <%= link_to t('.アカウント確認のメールを受け取っていませんか？'), new_confirmation_path(resource_name) %><br />
+            <% end %>
+            <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+              <%= link_to t('.アカウントのロック解除方法のメールを受け取っていませんか？'), new_unlock_path(resource_name) %><br />
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
