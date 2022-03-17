@@ -7,7 +7,7 @@
         <div class="movie-list"> 
         <h1>作品一覧</h1>
         <% @post.each do |post|%>
-            <%= link_to("/post/#{post.id}") do %>
+            <%= link_to("/post/edit/#{post.id}") do %>
                 <div class="movie">
                     <div class="image">
                         <img src="/movie_image/<%= post.image %>">

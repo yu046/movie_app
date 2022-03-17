@@ -52,5 +52,8 @@
     <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
       <%= link_to t('.アカウントのロック解除方法のメールを受け取っていませんか？'), new_unlock_path(resource_name) %><br />
     <% end %>
+    <%= link_to("/letter_opener") do %>
+        メールを確認
+    <% end %>
   </div>
 </div>

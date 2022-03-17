@@ -1,9 +1,9 @@
 <div class="new-container">
   <div class="site-info">
         <div class="title">
-        Weekendへようこそ！
+        Weekfilmsへようこそ！
         </div>
-        <strong>Weekend</strong>は週間ごとにランダムでオススメの<strong>映画×音楽</strong>を紹介するサイトです。<br>
+        <strong>Weekfilms</strong>は週間ごとにランダムでオススメの<strong>映画</strong>を紹介するサイトです。<br>
         気になった作品があれば見てみよう！<br>
         また、紹介したい作品があれば追加してみよう！<br>
     </div>
@@ -54,6 +54,9 @@
             <% end %>
             <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
               <%= link_to t('.アカウントのロック解除方法のメールを受け取っていませんか？'), new_unlock_path(resource_name) %><br />
+            <% end %>
+            <%= link_to("/letter_opener") do %>
+            メールを確認
             <% end %>
           </div>
         </div>

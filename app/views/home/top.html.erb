@@ -16,29 +16,25 @@
                     今週の注目作品はこちら
                     </div>
                     <div class="Main">
-                        <%
-=begin%>
- <div class="movie">
-                            <img src="/movie_image/<%= @movie.image %>">
-                            <div class="stitle">
-                            <%= @movie.title%>
+                        <div class="movie">
+                            <img src="/movie_image/<%= @today_movie.image %>">
+                            <div class="right-info">
+                                <div class="stitle">
+                                <%= @today_movie.title%>
+                                </div>
+                                <div class="info">
+                                上映日：<%= @today_movie.release.strftime('%Y')%>/
+                                製作国：<%= @today_movie.contry%>
+                                </div>
+                                <div class="syn">
+                                あらすじ<br>
+                                <%= truncate( @today_movie.synopsis, length:88) %>
+                                </div>
+                                <div class="syn-mv">
+                                <%= @today_movie.mv.html_safe%>
+                                </div>
                             </div>
-                            <%= @movie.contry%>/
-                            <%= @movie.release.strftime('%Y')%>
                         </div>
-                        <div class="cross">
-                            <img src="cross.jpg">
-                        </div>
-                        <div class="music">
-                            <img src="/music_image/<%= @music.image %>">
-                            <div class="stitle">
-                            <%= @music.artist%>/
-                            <%= @music.title%>
-                            </div>
-                            <%= @music.release.strftime('%Y')%>
-                        </div> 
-<%
-=end%>
                     </div>
                 </div>
                 
@@ -87,25 +83,23 @@
 
                 <% pre = "準備中" %>
                 <div class="title">
-                    映画一覧
+                映画一覧
                 </div>
                 <div class="work-list">
-                <%
-=begin%>
- <% @post.each do |post|%>
+                <% @movie.each do |m|%>
+                <%= link_to("/post/show/#{m.id}") do %>
                     <div class="work">
                         <div class="image">
-                            <img src="/movie_image/<%= post.image %>">
+                            <img src="/movie_image/<%= m.image %>">
                         </div>
                         <div class="right-info">
                             <div class="title"> 
-                                <%= post.title %>
+                                <%= m.title %>
                             </div>
                         </div>
                     </div>
+                <% end %>
                 <% end %> 
-<%
-=end%>
                 </div>
             </div>
 
@@ -126,12 +120,14 @@
                         1
                         </div>
                         <div class="image">
-                            <%#<img src="/movie_image/<%= @movie_rank[0].image %>">
+                        <%= link_to("/post/show/#{@movie_rank[0].id}") do%>
+                            <img src="/movie_image/<%= @movie_rank[0].image %>">
                         </div>
                         <div class="info">
                             <div class="title"> 
-                                <%#<%= @movie_rank[0].title %>
+                                <%= @movie_rank[0].title %>
                             </div>
+                        <% end %>
                         </div>
                     </div>
                     <div class="rank-info">
@@ -139,12 +135,14 @@
                         2
                         </div>
                         <div class="image">
-                            <%#<img src="/movie_image/<%= @movie_rank[1].image %>">
+                        <%= link_to("/post/show/#{@movie_rank[1].id}") do%>
+                            <img src="/movie_image/<%= @movie_rank[1].image %>">
                         </div>
                         <div class="info">
                             <div class="title"> 
-                                <%#<%= @movie_rank[1].title %>
+                                <%= @movie_rank[1].title %>
                             </div>
+                        <% end %>
                         </div>
                     </div>
                     <div class="rank-info">
@@ -152,61 +150,18 @@
                         3
                         </div>
                         <div class="image">
-                            <%#<img src="/movie_image/<%= @movie_rank[2].image %>">
+                        <%= link_to("/post/show/#{@movie_rank[2].id}") do%>
+                            <img src="/movie_image/<%= @movie_rank[2].image %>">
                         </div>
                         <div class="info">
                             <div class="title"> 
-                                <%#<%= @movie_rank[2].title %>
+                                <%= @movie_rank[2].title %>
                             </div>
+                        <% end %>
                         </div>
                     </div>
                 </div>    
-                <div class="sub-title">
-                週間 "音楽" ランキング
-                </div>
-                <div class="ranking">
-                    <div class="rank-info">
-                        <div class="rank1">
-                        1
-                        </div>
-                        <div class="image">
-                            <%#<img src="/music_image/<%= @music_rank[0].image %>">
-                        </div>
-                        <div class="info">
-                            <div class="title"> 
-                                <%#<%= @music_rank[0].title %>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-info">
-                        <div class="rank2">
-                        2
-                        </div>
-                        <div class="image">
-                            <%#<img src="/music_image/<%= @music_rank[1].image %>">
-                        </div>
-                        <div class="info">
-                            <div class="title"> 
-                                <%#<%= @music_rank[1].title %>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rank-info">
-                        <div class="rank3">
-                        3
-                        </div>
-                        <div class="image">
-                            <%#<img src="/music_image/<%= @music_rank[2].image %>">
-                        </div>
-                        <div class="info">
-                            <div class="title"> 
-                                <%#<%= @music_rank[2].title %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-
         </div>
     </div>
 </div>

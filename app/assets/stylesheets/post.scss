@@ -17,31 +17,56 @@
                 width: 87%;
                 margin-left: 85px;
 
-                .movie{
+                .Main{
+                    margin-top: 20px;
+                    width: 100%;
                     display: flex;
-
-                    .image {
-                        img {
-                        width: 150px;
-                        height: 200px;
-                        border-radius: 0%;
-                        } 
-                    }
-
-                    .info{
-                        .title{
-                            font-weight: bold;
-                            font-size:17px;
-                        }
-                        .releases{
-                            //font-size:13px;
-                        }
-                        .run-time{
-                            //font-size:13px;
+                    justify-content: center;
+                    .movie{
+                        padding-top: 4%;
+                        width: 620px;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        img{
+                            width: 200px;
+                            height: 282px;
+                            border-radius: 0%;
+                            object-fit: cover;
                         }
 
-                        .syn{
-                            //font-size:13px;
+                        .right-info{
+                            width: 420px;
+                            text-align: left;
+                            padding-left: 10px;
+                            .stitle{
+                                font-weight: bold;
+                                font-size: 20px;
+                            }
+                            .info{
+                                font-size: 13px;
+                                font-weight: bold;
+                            }
+                            .syn{
+                                font-size: 14px;
+                                font-weight: 500;
+                            }
+                            .syn-mv{
+                                width: 260px;
+                                height: 0px;
+                                background-color: #ebebeb;
+                                position: relative;
+                                padding-bottom: 34.25%; /*アスペクト比 16:9の場合の縦幅*/
+                                overflow: hidden;
+                            }
+                            
+                            .syn-mv iframe {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                            }
                         }
                     }
                 }

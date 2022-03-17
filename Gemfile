@@ -15,6 +15,7 @@ gem 'i18n_generators'
 gem 'letter_opener'
 gem 'letter_opener_web'
 gem 'devise-i18n'
+gem "mini_magick"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'

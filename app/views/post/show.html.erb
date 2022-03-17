@@ -1,0 +1,32 @@
+<div class="container-movie">
+    <%= render 'shared/menubar' %>
+    <div class="conte-info">
+        <div class="index-link">
+        <%= render "shared/toolbar"%>
+        </div>
+        <div class="movie-list"> 
+            <%= link_to("/post/edit/#{@post.id}") do %>
+                <div class="Main">
+                    <div class="movie">
+                        <img src="/movie_image/<%= @post.image %>">
+                        <div class="right-info">
+                            <div class="stitle">
+                            <%= @post.title %>
+                            </div>
+                            <div class="info">
+                            公開日：<%= @post.release.strftime('%Y/%m/%d') %>
+                            上映時間：<%= @post.running_time %>分
+                            </div>
+                            <div class="syn">
+                            あらすじ<%= truncate( @post.synopsis, length:88) %>
+                            </div>
+                            <div class="syn-mv">
+                            <%= @post.mv.html_safe%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

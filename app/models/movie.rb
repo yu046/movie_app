@@ -1,6 +1,5 @@
 class Movie < ApplicationRecord
     validates :title, {presence: true}
-    validates :user_id, {presence: true}
     validates :release, {presence: true}
 
     def user

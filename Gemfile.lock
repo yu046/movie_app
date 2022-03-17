@@ -294,6 +294,7 @@ DEPENDENCIES
   letter_opener
   letter_opener_web
   listen (~> 3.3)
+  mini_magick
   mysql2 (~> 0.5)
   omniauth-twitter
   puma (~> 5.0)

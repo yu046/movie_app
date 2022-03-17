@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable  #:omniauthable, omniauth_providers:[:twitter]
+  mount_uploader :user_image, ImageUploader
+  attr_accessor :current_password
 end

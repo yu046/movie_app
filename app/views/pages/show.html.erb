@@ -1,3 +1,31 @@
-<h1>こんにちは、<%= current_user.username %>さん</h1>
-<p>ユーザー用ページです。</p>
-<%= link_to("ホームに戻る",'/pages/index') %>
+<%= render 'shared/menubar' %>
+<div class="container-user">
+    <div class="index-link">
+    </div>
+    <div class="user-info">
+        <div class="link">
+        <p>ユーザー用ページです。</p>
+        <%= link_to("topに戻る", "/") %>
+        </div>
+        <div class="profile">
+            <div class="head">
+            </div>
+            <div class="user">
+                <div class="image">
+                </div>
+                <div class="info">
+                    <div class="name">
+                    <%= current_user.username %>
+                    </div>
+                    <div class="email">
+                    email:<%= @current_user.email%>
+                    </div>
+                </div>
+            </div>
+            <div class="edit">
+            <%= link_to 'プロフィールを変更', edit_user_registration_path %>
+            </div>
+        </div>    
+        <%= link_to("topに戻る", "/") %>
+    </div>
+</div>

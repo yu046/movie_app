@@ -1,6 +1,4 @@
-<%
-=begin%>
- <% content_for :title do %>
+<% content_for :title do %>
     「<%= @search_title %>」の検索結果は<%= @search_movie_articles.count %>件です
 <% end %>
 <div class="container-search">
@@ -29,5 +27,3 @@
     </div>
     <%= link_to("topに戻る", "/") %>
 </div> 
-<%
-=end%>

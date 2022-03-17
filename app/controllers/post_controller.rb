@@ -6,9 +6,13 @@ class PostController < ApplicationController
     @post = Movie.all
   end
 
+  def show
+    @post = Movie.find_by(id: params[:id])
+  end
+
   def edit
     @post = Movie.find_by(id: params[:id])
-    @user = @post.user #userメソッド(モデルの中に書いてある)
+    # @user = @post.user #userメソッド(モデルの中に書いてある)
   end
 
   def new
@@ -21,8 +25,8 @@ class PostController < ApplicationController
       release: params[:release],
       running_time: params[:running_time],
       synopsis: params[:synopsis],
+      mv: params[:mv],
       contry: params[:contry]
-      #user_id: @current_user.id,
     )
 
     @post.save
@@ -46,7 +50,8 @@ class PostController < ApplicationController
     title: params[:title],
     release: params[:release],
     running_time: params[:running_time],
-      synopsis: params[:synopsis]
+    synopsis: params[:synopsis],
+    mv: params[:mv]
     )
 
     if params[:image]
@@ -62,7 +67,8 @@ class PostController < ApplicationController
         title: params[:title],
         release: params[:release],
         running_time: params[:run_time],
-        synopsis: params[:syn]
+        synopsis: params[:syn],
+        mv: params[:mv]
       }
         redirect_to("/post/#{@post.id}")
     end
