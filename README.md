@@ -5,3 +5,4 @@
 
 イメージ図
 ![2022-03-17 193547](https://user-images.githubusercontent.com/97779004/158791386-010a46fe-728e-4133-af90-5461ce154c9f.png)
+![新規](https://user-images.githubusercontent.com/97779004/159686972-a9ec6cf9-1ccc-4fce-83b0-3f5be86221d0.png)
